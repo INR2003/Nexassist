@@ -7,7 +7,26 @@ export default function LoginPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Login:', { email, password });
+    // POST credentials to backend login endpoint
+    const apiBase = import.meta.env.VITE_API_BASE || '';
+    fetch(`${apiBase}/api/login/`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username: email, password }),
+    })
+      .then(async (res) => {
+        const data = await res.json();
+        if (!res.ok) throw data;
+        // store tokens (simple example)
+        if (data.access) localStorage.setItem('access_token', data.access);
+        if (data.refresh) localStorage.setItem('refresh_token', data.refresh);
+        console.log('Login success', data);
+        // Redirect or update app state here
+      })
+      .catch((err) => {
+        console.error('Login error', err);
+        // Display error to user as needed
+      });
   };
 
   return (

@@ -1,0 +1,1 @@
+# Minimal accounts app package

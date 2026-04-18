@@ -1,0 +1,11 @@
+Django>=4.2,<5
+djangorestframework>=3.14
+djangorestframework-simplejwt>=2.8
+django-cors-headers>=3.13
+python-dotenv>=1.0
+psycopg[binary]>=3.2
+Django>=4.2
+# Use a released djangorestframework version compatible with Django
+djangorestframework>=3.17.1,<4
+djangorestframework-simplejwt>=5.2
+
