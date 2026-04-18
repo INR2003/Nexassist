@@ -13,9 +13,9 @@ export default function LoginPage() {
   return (
     <div 
       className="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat px-4"
-style={{
-  backgroundImage: `url('/images/bg.png')`
-}}
+        style={{
+          backgroundImage: `url('/images/bg.png')`
+        }}
     >
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/30" />
